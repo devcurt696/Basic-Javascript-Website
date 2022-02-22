@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <h1>Gallery</h1>
+    <nav id="navbar">
+        <ul>
+            <script src="javascript/navbar.js"></script>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="mySlides">
+            <div class="numbertext">1 / 5</div>
+            <img src="images/Inevitable_oblivion.png" style="height:800px;width:100%" alt="Inevitable Oblivion">
+
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 5</div>
+            <img src="images/IMG_20161223_173828.jpg" style="height:800px;width:100%" alt="Sunset">
+        </div>
+
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 5</div>
+            <img src="images/20180731_141301.jpg" style="height: 800px;;width:100%" alt="New York, NY">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">4 / 5</div>
+            <img src="images/montrealqc.jpg" style="height: 800px;width:100%" alt="Montreal, QC">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">5 / 5</div>
+            <img src="images/IMG_20160526_113715.jpg" style="height: 800px;width:100%" alt="Pittsburgh, PA">
+        </div>
+
+
+        <a class="prev" onclick="nextSlide(-1)">❮</a>
+        <a class="next" onclick="nextSlide(1)">❯</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="row"></div>
+        <div class="column">
+            <img class="demo cursor" src="images/Inevitable_oblivion.png" style="height:100px;width:100%"
+                onclick="currentSlide(1)" alt="Inevitable Oblivion">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/IMG_20161223_173828.jpg" style="height:100px;width:100%"
+                onclick="currentSlide(2)" alt="Sunset">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/20180731_141301.jpg" style="height: 100px;width:100%"
+                onclick="currentSlide(3)" alt="New York, NY">
+        </div>
+
+        <div class="column">
+            <img class="demo cursor" src="images/montrealqc.jpg" style="height:100px;width:100%"
+                onclick="currentSlide(4)" alt="Montreal, QC">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/IMG_20160526_113715.jpg" style="height:100px;width:100%"
+                onclick="currentSlide(4)" alt="Pittsburgh, PA">
+        </div>
+
+    </div>
+    <script src="javascript/gallery.js"></script>
+    <footer style="position:static">&copy; 2022 Curtis Crouse</footer>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <h1>Number Game</h1>
+    <nav>
+        <ul>
+            <script src="javascript/navbar.js"></script>
+        </ul>
+    </nav>
+
+    <h3>Let's Play</h3>
+    <p>In this game, you will select a number between 0 and 100. You get a total of ten guesses! </p>
+    <div class="form">
+        <label for="userGuess">Enter a Number 1-100: </label>
+        <input type="text" id="userGuess" class="guessField">
+        <button type="submit" value="Submit" class="submitGuess">Submit</button>
+    </div>
+
+    <div class="result">
+        <p class="guesses"></p>
+        <p class="prevRes"></p>
+        <p class="lowOrHigh"></p>
+    </div>
+    <script src="javascript/numbersgame.js"></script>
+
+    <footer>&copy; 2022 Curtis Crouse</footer>
+</body>
+
+</html>
