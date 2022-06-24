@@ -6,10 +6,12 @@
     border-radius: 4px;
     font-size: 12px;
 }
-#form h3{
+
+#form h3 {
     text-align: center;
-    color:darkblue;
+    color: darkblue;
 }
+
 #form button {
     padding: 10px;
     margin-top: 10px;
@@ -19,6 +21,7 @@
     border: none;
     border-radius: 4px;
 }
+
 .input-control {
     display: flex;
     flex-direction: column;
@@ -36,6 +39,7 @@
 .input-control input:focus {
     outline: 0;
 }
+
 .input-control.success input {
     border-color: #09c372;
 }
@@ -48,12 +52,4 @@
     color: #ff3860;
     font-size: 9px;
     height: 13px;
-}
-.input-control.strength input {
-    border-color: orange;
-;}
-.input-control .strength {
-    color:orange;
-    font-size: 9px;
-    height: 13px
 }
