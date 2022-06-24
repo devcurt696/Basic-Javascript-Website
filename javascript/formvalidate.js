@@ -3,11 +3,13 @@ let firstName = document.getElementById('fname')
 let lastName = document.getElementById('lname')
 let userEmail = document.getElementById('email')
 let userDate = document.getElementById('pickdate')
-let password = document.getElementById('password')
-let userComment = document.getElementById('comment')
-let strength = document.getElementById('strength');
-var strongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+
+let userComment = document.getElementById('comment');
+let timeout;
+let password = document.getElementById('passInput');
+let displayStrength = document.getElementById('strengthMeter');
+var strongRegex = new RegExp('(?=.* [a - z])(?=.*[A-Z])(?=.* [0 - 9])(?=.* [^ A - Za - z0 - 9])(?=.{ 8, })');
+var mediumRegex = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))');
 
 
 myForm.addEventListener('submit', e => {
@@ -90,34 +92,38 @@ const validateInputs = () => {
     }
 }
 
-password.addEventListener('change', function () {
-    passwordStrength();
+function setStrength(passwordParam) {
+    if (strongRegex.test(passwordParam)) {
+        displayStrength.style.backgroundColor = 'green';
+        password.style.borderColor = 'green';
+        displayStrength.textContent = 'Strong';
+    } else if (mediumRegex.test(passwordParam)) {
+
+        displayStrength.style.backgroundColor = 'orange';
+        password.style.borderColor = 'orange';
+        displayStrength.textContent = 'Medium';
+
+    } else {
+        displayStrength.style.backgroundColor = 'red';
+        password.style.borderColor = 'red';
+        displayStrength.textContent = 'Weak';
+
+    }
+
+}
+
+password.addEventListener("input", () => {
+    displayStrength.style.display = 'block';
+    clearTimeout(timeout);
+    timeout = setTimeout(() => setStrength(password.value), 500);
+
+    if (password.value.length !== 0) {
+        displayStrength.style.display = 'block';
+    } else {
+        displayStrength.style.display = 'none';
+    }
 
 });
-
-
-const setStrength = (element, message) => {
-    const inputControl = element.parentElement;
-    const displayStrength = inputControl.querySelector('.strength');
-    displayStrength.innerText = message;
-    inputControl.classList.add('strength');
-
-
-}
-
-function passwordStrength() {
-    if (mediumRegex.test(password.value)) {
-
-        setStrength(password, 'Medium!');
-    } else if (strongRegex.test(password.value)) {
-
-        setStrength(password, 'Strong!');
-    } else if (password === '') {
-        inputControl.classList.remove('strength');
-    } else {
-        setStrength(password, 'Weak!')
-    }
-}
 
 function countChars(obj) {
     document.getElementById('charnum').innerHTML = obj.value.length + ' characters';

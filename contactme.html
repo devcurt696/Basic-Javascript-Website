@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="javascript/jquery-ui.js"></script>
 
@@ -20,6 +22,20 @@
 
         });
     </script>
+    <style>
+        .passInput {
+            margin-top: 5%;
+            text-align: center;
+
+        }
+
+        .displayStrength {
+            margin-top: 5%;
+            display: none;
+            text-align: center;
+            width: 90%;
+        }
+    </style>
 
 </head>
 
@@ -54,11 +70,11 @@
             <input name="pickdate" id="pickdate" type="text" required>
             <div class="error"></div>
         </div><br>
-        <div class="input-control">
+        <div class="input-control text-danger justify-content-center">
             <label for="password">Password: </label>
-            <input name="password" id="password" type="password">
-            <div class="error"></div>
-            <div name="strength" class="strength"></div>
+            <input name="password" id="passInput" type="password" class="form-control passInput"><br />
+            <div class="error"></div><br />
+            <span name="strength" id="strengthMeter" class="badge displayStrength">Weak</span>
         </div>
         <br>
         <div class="input-control">
