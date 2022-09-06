@@ -8,17 +8,20 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 
 <body>
     <h1>Gallery</h1>
-    <nav id="navbar">
-        <ul>
-            <script src="javascript/navbar.js"></script>
-        </ul>
+    
+    <nav class="topnav" id="myTopnav">
+        <script src="javascript/navbar.js"></script>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
-
+    
     <div class="container">
         <div class="mySlides">
             <div class="numbertext">1 / 5</div>
@@ -79,6 +82,16 @@
 
     </div>
     <script src="javascript/gallery.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className == "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
     <footer style="position:static">&copy; 2022 Curtis Crouse</footer>
 </body>
 
