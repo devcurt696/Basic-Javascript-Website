@@ -14,7 +14,7 @@ $(document).ready(function () {
         for (let link in nav) {
 
 
-                $('ul').append(`<li><a href="${nav[link][0]}">${nav[link][1]}</a></li>`);
+                $('.topnav').append(`<a href="${nav[link][0]}">${nav[link][1]}</a>`);
 
         }
 
