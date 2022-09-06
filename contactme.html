@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/form.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="javascript/jquery-ui.js"></script>
 
@@ -42,10 +43,11 @@
 <body>
 
     <h1>Contact Me</h1>
-    <nav>
-        <ul>
-            <script src="javascript/navbar.js"></script>
-        </ul>
+    <nav class="topnav" id="myTopnav">
+        <script src="javascript/navbar.js"></script>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
 
     <form name="myForm" id="form" method="post" action="https://ss1.ciwcertified.com/cgi-bin/process.pl" novalidate>
@@ -88,6 +90,17 @@
 
     </form>
     <script src="javascript/formvalidate.js"></script>
+    
+     <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className == "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
     <footer>&copy; 2022 Curtis Crouse</footer>
 </body>
 
