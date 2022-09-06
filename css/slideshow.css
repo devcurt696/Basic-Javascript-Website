@@ -19,3 +19,10 @@
 #slideshow img.last-active {
     z-index:9;
 }
+
+@media screen and (max-width: 600px) {
+    #slideshow img {
+        height: 250px;
+        width: 400px;
+    }
+}
